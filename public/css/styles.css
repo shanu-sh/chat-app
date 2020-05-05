@@ -97,6 +97,23 @@ button {
   button:active:after {
     opacity: 0;
   }
+  
+  .btn-icon {
+      border-radius: 50%;
+      box-shadow: none;
+      background: none;
+      position: absolute;
+  }
+
+  .btn-send {
+    right: 0px;
+    bottom: 12px;
+  }
+
+  .btn-location {
+    right: 50px;
+    bottom: 12px;
+  }
 
 /* Join Page Styles */
 
@@ -147,6 +164,23 @@ button {
     overflow-y: scroll
 }
 
+@media screen and (max-width: 768px) {
+    .chat {
+        flex-direction: column;
+    }
+
+    .chat__sidebar {
+        height: 80px;
+        width: 100%;
+    }
+
+    .compose {
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+    }
+}
+
 /* Chat styles */
 
 .chat__main {
@@ -187,23 +221,22 @@ button {
 
 .compose {
     display: flex;
-    flex-shrink: 0;
     margin-top: 16px;
     padding: 24px;
 }
 
 .compose form {
     display: flex;
-    flex-grow: 1;
     margin-right: 16px;
+    width: 100%;
 }
 
 .compose input {
     border: 1px solid #eeeeee;
     width: 100%;
-    padding: 12px;
     margin: 0 16px 0 0;
-    flex-grow: 1;
+    box-shadow: none;
+    padding: 16px 38px;
 }
 
 .compose button {
