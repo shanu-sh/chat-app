@@ -16,11 +16,12 @@ input {
 
 body {
     line-height: 1.4;
-    color: #333333;
+    color: #001f3f;
     font-family: Helvetica, Arial, sans-serif;
 }
 
 h1 {
+    font-size: 20px;
     margin-bottom: 16px;
 }
 
@@ -28,50 +29,94 @@ label {
     display: block;
     font-size: 14px;
     margin-bottom: 8px;
-    color: #777;
+    font-weight: 800;
+    color: #001f3f;
 }
 
 input {
-    border: 1px solid #eeeeee;
-    padding: 12px;
-    outline: none;
+    border: none;
+    outline:none;
+    background: none;
+    color: #001f3f;
+    padding: 16px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 2px #4974aa,
+                inset -2px -2px 2px #8fe0ff;
+}
+
+input::placeholder {
+    color: #000000
 }
 
 button {
     cursor: pointer;
-    padding: 12px;
-    background: #7C5CBF;
+    background-color:#00feca;
     border: none;
-    color: white;
-    font-size: 16px;
-    transition: background .3s ease;
-}
-
-button:hover {
-    background: #6b47b8;
-}
-
-button:disabled {
-    cursor: default;
-    background: #7c5cbf94;
-}
+    border-radius: 6px;
+    box-shadow: 9px 9px 16px #4974aa, -9px -9px 16px #8fe0ff;
+    color: #4D3252;
+    font-weight: 700;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right, 
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+  }
+  
+  button:hover:after {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    transition-property: transform, opacity;
+    transition-duration: 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  
+  button:active:after {
+    opacity: 0;
+  }
 
 /* Join Page Styles */
 
 .centered-form {
-    background: #333744;
+    background: #6caafa;
     width: 100vw;
     height: 100vh;   
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .centered-form__box {
-    box-shadow: 0px 0px 17px 1px #1D1F26;
-    background: #F7F7FA;
+    border-radius: 8px;
+    background: #6caafa;
+    box-shadow:  15px 15px 30px #4974aa, 
+                 -15px -15px 30px #8fe0ff;
     padding: 24px;
-    width: 250px;
+    max-width: 330px;
 }
 
 .centered-form button {
@@ -79,8 +124,13 @@ button:disabled {
 }
 
 .centered-form input {
-    margin-bottom: 16px;
     width: 100%;
+}
+
+.welcome-note {
+    color: #001f3f;
+    font-size: 20px;
+    padding: 32px 0;
 }
 
 /* Chat Page Layout */
