@@ -97,6 +97,23 @@ button {
   button:active:after {
     opacity: 0;
   }
+  
+  .btn-icon {
+      border-radius: 50%;
+      box-shadow: none;
+      background: none;
+      position: absolute;
+  }
+
+  .btn-send {
+    right: 0px;
+    bottom: 12px;
+  }
+
+  .btn-location {
+    right: 50px;
+    bottom: 12px;
+  }
 
 /* Join Page Styles */
 
@@ -137,6 +154,7 @@ button {
 
 .chat {
     display: flex;
+    background-image: url("./../img/backgroundjpeg.png")
 }
 
 .chat__sidebar {
@@ -147,6 +165,7 @@ button {
     overflow-y: scroll
 }
 
+
 /* Chat styles */
 
 .chat__main {
@@ -154,6 +173,7 @@ button {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
+    background-image: url("./../img/backgroundjpeg.png")
 }
 
 .chat__messages {
@@ -187,23 +207,22 @@ button {
 
 .compose {
     display: flex;
-    flex-shrink: 0;
     margin-top: 16px;
     padding: 24px;
 }
 
 .compose form {
     display: flex;
-    flex-grow: 1;
     margin-right: 16px;
+    width: 100%;
 }
 
 .compose input {
     border: 1px solid #eeeeee;
     width: 100%;
-    padding: 12px;
     margin: 0 16px 0 0;
-    flex-grow: 1;
+    box-shadow: none;
+    padding: 16px 38px;
 }
 
 .compose button {
@@ -230,4 +249,27 @@ button {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0 24px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .chat {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .chat__sidebar {
+        height: 80px;
+        width: 100%;
+    }
+
+    .compose {
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+    }
+
+    .chat__main {
+        max-height: calc(100vh - 160px);
+    }
 }
