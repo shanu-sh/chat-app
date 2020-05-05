@@ -154,6 +154,7 @@ button {
 
 .chat {
     display: flex;
+    background-image: url("./../img/backgroundjpeg.png")
 }
 
 .chat__sidebar {
@@ -164,22 +165,6 @@ button {
     overflow-y: scroll
 }
 
-@media screen and (max-width: 768px) {
-    .chat {
-        flex-direction: column;
-    }
-
-    .chat__sidebar {
-        height: 80px;
-        width: 100%;
-    }
-
-    .compose {
-        bottom: 0;
-        position: fixed;
-        width: 100%;
-    }
-}
 
 /* Chat styles */
 
@@ -188,6 +173,7 @@ button {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
+    background-image: url("./../img/backgroundjpeg.png")
 }
 
 .chat__messages {
@@ -263,4 +249,27 @@ button {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0 24px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .chat {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .chat__sidebar {
+        height: 80px;
+        width: 100%;
+    }
+
+    .compose {
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+    }
+
+    .chat__main {
+        max-height: calc(100vh - 160px);
+    }
 }
